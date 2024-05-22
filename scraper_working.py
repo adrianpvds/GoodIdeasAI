@@ -12,9 +12,8 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Initialize Spacy and Apify
 nlp = spacy.load("en_core_web_sm")
-openai.api_key = os.getenv("OPENAI_API_KEY") 
-apify_key = os.getenv("APIFY_API_KEY")
-apify_client = ApifyClient(apify_key)
+openai.api_key = os.getenv("OPENAI_API_KEY")
+apify_client = ApifyClient(os.getenv("APIFY_API_KEY"))
 
 def correct_spelling(text):
     spell = SpellChecker()
